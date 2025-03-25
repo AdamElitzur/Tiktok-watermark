@@ -16,15 +16,15 @@ A React Native application that automatically detects and removes TikTok waterma
 
 ### Main page:
 
-![Main page](/screenshots/main_page.png)
+<img src="./screenshots/main_page.png" width="200"/>
 
 ### Frame before:
 
-![Main page](/screenshots/before.png)
+<img src="./screenshots/before.png" width="200"/>
 
 ### Frame after:
 
-![Main page](/screenshots/after.png)
+<img src="./screenshots/after.png" width="200"/>
 
 ## Project Structure
 
