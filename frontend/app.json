@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "web": {
+      "output": "static"
+    },
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      "expo-video"
+    ],
+    "name": "tiktok_watermark",
+    "slug": "tiktok_watermark",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select videos."
+      }
+    },
+    "android": {
+      "permissions": [
+        "READ_EXTERNAL_STORAGE"
+      ]
+    }
+  }
+}
