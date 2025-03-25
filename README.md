@@ -5,9 +5,7 @@ A React Native application that automatically detects and removes TikTok waterma
 ## Features
 
 - Upload videos using Expo Image Picker
-- Automatically detect TikTok watermarks using multiple detection methods:
-  - Template matching with TikTok watermark template
-  - Statistical analysis (variance, brightness, edge density)
+- Automatically detect TikTok watermarks
 - Remove watermarks using either blurring or inpainting techniques
 - Visual feedback with loading spinner during processing
 - Save processed videos to your device gallery
@@ -111,46 +109,6 @@ cd backend
 python -m unittest tests/test_watermark_removal.py
 ```
 
-The tests cover the following scenarios:
-
-- Watermark detection in videos with TikTok watermarks
-- Correctly reporting absence of watermarks in clean videos
-- Comparing blur vs. inpainting methods
-- Testing mask generation for inpainting
-- Testing the template matching capability
-- Testing watermark region detection with various inputs
-
-## Test Cases
-
-When testing the application, verify these key functionalities:
-
-- ✅ **Upload an MP4**  
-  Can you select and upload a video from your phone?
-
-- ✅ **Detect watermark**  
-  If you upload a video with a TikTok watermark, is it detected?  
-  If you upload a video without a watermark, does it correctly report no watermark?
-
-- ✅ **Blur/inpaint**  
-  Is the watermark visibly blurred or removed correctly?  
-  Does the inpainting option produce a cleaner result than blurring?
-
-- ✅ **Show detection result**  
-  Does the frontend show "Watermark detected and removed successfully!" when detected?  
-  Does it show "No watermark detected in this video" when none is found?
-
-- ✅ **Play processed video**  
-  Can the processed video be played in the app?  
-  Do the play/pause controls work correctly?
-
-- ✅ **Save to gallery**  
-  Can you save the processed video to your device gallery?  
-  Is there appropriate feedback after saving?
-
-- ✅ **Video Cleanup**  
-  Does the app properly clean up old processed videos?  
-  Can you access the maintenance endpoint to force cleanup?
-
 ## Technical Details
 
 ### Frontend
@@ -211,13 +169,12 @@ By combining multiple detection methods, the app can accurately detect watermark
 - MoviePy
 - Flask-CORS
 
-## Trade-offs and Assumptions
+## More info
 
 1. Watermark Detection:
 
    - Uses a hybrid detection approach (template matching + statistical analysis)
    - Assumes watermark switches location at 3.47 seconds
-   - Could be further improved with ML-based detection
 
 2. Processing Method:
 
@@ -227,10 +184,3 @@ By combining multiple detection methods, the app can accurately detect watermark
 3. Performance:
    - Video processing happens on the backend to avoid mobile device limitations
    - Automatic cleanup reduces storage issues
-
-## Future Improvements
-
-- Machine learning-based watermark detection using a trained model
-- Support for watermarks from other platforms (Instagram, YouTube, etc.)
-- More sophisticated inpainting techniques
-- Video compression options to reduce file size
