@@ -12,6 +12,20 @@ A React Native application that automatically detects and removes TikTok waterma
 - Automatic cleanup of old processed videos
 - Clean UI with toggle for selecting removal method
 
+## Screenshots
+
+### Main page:
+
+![Main page](/screenshots/main_page.png)
+
+### Frame before:
+
+![Main page](/screenshots/before.png)
+
+### Frame after:
+
+![Main page](/screenshots/after.png)
+
 ## Project Structure
 
 ```
@@ -184,3 +198,7 @@ By combining multiple detection methods, the app can accurately detect watermark
 3. Performance:
    - Video processing happens on the backend to avoid mobile device limitations
    - Automatic cleanup reduces storage issues
+
+## Disclaimer
+
+This project is provided as-is for personal or educational use. I take no responsibility for how it is used or any damages it may cause.
